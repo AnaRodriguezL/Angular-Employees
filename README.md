@@ -2,8 +2,6 @@
 
 Welcome to our Employee Management Platform! This comprehensive solution is designed to streamline various aspects of employee administration. Developed with Angular for the frontend, Node.js and Express for the backend, and MySQL as the database, our platform offers a user-friendly interface coupled with robust functionality.
 
-
-<hr>
 <br>
 
 ## 🚀 Key Features
