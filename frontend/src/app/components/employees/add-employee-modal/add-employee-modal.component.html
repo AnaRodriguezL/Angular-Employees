@@ -1,0 +1,18 @@
+<div class="modal-add">
+    <form (submit)="save()" class="form">
+        <h1 class="title">Add Employee</h1>
+
+        <input type="number" placeholder="ID" name="identification" [(ngModel)]="employee.identification" (input)="checkInputs()" maxlength="10">
+        <input type="text" placeholder="Names" name="names" [(ngModel)]="employee.names" (input)="checkInputs()" (keypress)="preventInput($event)">
+        <input type="text" placeholder="Surnames" name="surnames" [(ngModel)]="employee.surnames" (input)="checkInputs()" (keypress)="preventInput($event)">
+        <input type="email" placeholder="Email" name="email" [(ngModel)]="employee.email" (input)="checkInputs()">
+
+        <select name="role" [(ngModel)]="employee.role" (change)="checkInputs()">
+            <option selected="true" disabled="disabled" value="">Select role</option>
+            <option value="admin">Admin</option>
+            <option value="employee">Employee</option>
+        </select>
+
+        <button type="submit" [disabled]="!areInputsFilled()">Save</button>
+    </form>
+</div>

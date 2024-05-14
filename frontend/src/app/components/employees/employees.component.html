@@ -1,0 +1,39 @@
+<div class="table-users">
+    <div class="header">Employees</div>
+
+    <table cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Names</th>
+            <th>Surnames</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+
+        <tr *ngFor="let employee of employees">
+            <td>{{ employee.identification }}</td>
+            <td>{{ employee.names }}</td>
+            <td>{{ employee.surnames }}</td>
+            <td>{{ employee.email }}</td>
+            <td>
+                <div class="actions-buttons">
+                    <a class="actions-button actions-button--edit" aria-label="Edit">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    <a class="actions-button actions-button--delete" aria-label="Delete" (click)="openDeleteModal(employee.id)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="floating-container">
+    <div class="floating-button" (click)="openAddModal()">+</div>
+</div>
+
+<app-delete-employee-modal (confirm)="onDelete($event)"></app-delete-employee-modal>
+
+<app-add-employee-modal></app-add-employee-modal>
+
