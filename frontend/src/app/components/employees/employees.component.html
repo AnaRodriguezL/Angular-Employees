@@ -18,7 +18,7 @@
             <td>
                 <div class="actions-buttons">
                     <a class="actions-button actions-button--edit" aria-label="Edit">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <i class="fa-solid fa-eye"></i>
                     </a>
                     <a class="actions-button actions-button--delete" aria-label="Delete" (click)="openDeleteModal(employee.id)">
                         <i class="fa fa-trash" aria-hidden="true"></i>
@@ -29,8 +29,16 @@
     </table>
 </div>
 
-<div class="floating-container">
-    <div class="floating-button" (click)="openAddModal()">+</div>
+<div class="floating-container-close">
+    <div class="floating-button-close" [routerLink]="['/login']">
+        <i class="fa-solid fa-right-to-bracket"></i>
+    </div>
+</div>
+
+<div class="floating-container-add">
+    <div class="floating-button-add" (click)="openAddModal()">
+        <i class="fa-solid fa-user-plus"></i>
+    </div>
 </div>
 
 <app-delete-employee-modal (confirm)="onDelete($event)"></app-delete-employee-modal>

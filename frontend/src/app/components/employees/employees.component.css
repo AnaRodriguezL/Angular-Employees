@@ -224,7 +224,7 @@ table tr {
     }
 }
 
-.floating-container {
+.floating-container-add {
     position: fixed;
     width: 100px;
     height: 100px;
@@ -233,7 +233,16 @@ table tr {
     margin: 35px 25px;
 }
 
-.floating-container:hover .floating-button {
+.floating-container-close {
+    position: fixed;
+    width: 250px;
+    height: 100px;
+    bottom: 0;
+    right: 0;
+    margin: 35px 25px;
+}
+
+.floating-container-add:hover .floating-button-add {
     box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
     -webkit-transform: translatey(5px);
     transform: translatey(5px);
@@ -241,7 +250,15 @@ table tr {
     transition: all 0.3s;
 }
 
-.floating-container .floating-button {
+.floating-container-close:hover .floating-button-close {
+    box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+    -webkit-transform: translatey(5px);
+    transform: translatey(5px);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.floating-container-add .floating-button-add {
     position: absolute;
     width: 65px;
     height: 65px;
@@ -254,7 +271,28 @@ table tr {
     color: #fafafa;
     line-height: 65px;
     text-align: center;
-    font-size: 50px;
+    font-size: 20px;
+    z-index: 100;
+    box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.floating-container-close .floating-button-close {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: #0ea5e9;
+    bottom: 0;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fafafa;
+    line-height: 65px;
+    text-align: center;
+    font-size: 20px;
     z-index: 100;
     box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
     cursor: pointer;
