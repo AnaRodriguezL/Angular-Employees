@@ -48,6 +48,13 @@ export class AddEmployeeModalComponent {
             );
     }
 
+    close(): void {
+        const modal = document.querySelector('.modal-add') as HTMLElement;
+        modal.style.display = 'none';
+
+        this.employee = {};
+    }
+
     // Method to generate username
     generateUsername(names: string, surnames: string): string {
         // Take the first letters of the name and surname
@@ -84,7 +91,7 @@ export class AddEmployeeModalComponent {
             event.preventDefault();
             return false;
         }
-    }    
+    }
 
     // Check if all inputs have any value
     checkInputs() {

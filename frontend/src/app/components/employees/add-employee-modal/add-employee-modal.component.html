@@ -2,9 +2,12 @@
     <form (submit)="save()" class="form">
         <h1 class="title">Add Employee</h1>
 
-        <input type="number" placeholder="ID" name="identification" [(ngModel)]="employee.identification" (input)="checkInputs()" maxlength="10">
-        <input type="text" placeholder="Names" name="names" [(ngModel)]="employee.names" (input)="checkInputs()" (keypress)="preventInput($event)">
-        <input type="text" placeholder="Surnames" name="surnames" [(ngModel)]="employee.surnames" (input)="checkInputs()" (keypress)="preventInput($event)">
+        <input type="number" placeholder="ID" name="identification" [(ngModel)]="employee.identification"
+            (input)="checkInputs()" maxlength="10">
+        <input type="text" placeholder="Names" name="names" [(ngModel)]="employee.names" (input)="checkInputs()"
+            (keypress)="preventInput($event)">
+        <input type="text" placeholder="Surnames" name="surnames" [(ngModel)]="employee.surnames"
+            (input)="checkInputs()" (keypress)="preventInput($event)">
         <input type="email" placeholder="Email" name="email" [(ngModel)]="employee.email" (input)="checkInputs()">
 
         <select name="role" [(ngModel)]="employee.role" (change)="checkInputs()">
@@ -13,6 +16,13 @@
             <option value="employee">Employee</option>
         </select>
 
-        <button type="submit" [disabled]="!areInputsFilled()">Save</button>
+        <div class="container-buttons-modal">
+            <button type="submit" [disabled]="!areInputsFilled()" class="confirm-button">
+                <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+            <button class="cancel-button" (click)="close()">
+                <i class="fa-solid fa-ban"></i>
+            </button>
+        </div>
     </form>
 </div>
