@@ -48,11 +48,16 @@ export class AddEmployeeModalComponent {
             );
     }
 
+    /**
+     * Closes the add employee modal.
+     *
+     * Clears the form data and sets the display of the modal to none.
+     */
     close(): void {
         const modal = document.querySelector('.modal-add') as HTMLElement;
-        modal.style.display = 'none';
+        modal.style.display = 'none'; // Hide the modal
 
-        this.employee = {};
+        this.employee = {}; // Clear the form data
     }
 
     // Method to generate username
